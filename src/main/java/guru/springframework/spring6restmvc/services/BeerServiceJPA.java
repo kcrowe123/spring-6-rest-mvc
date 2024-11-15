@@ -32,12 +32,11 @@ public class BeerServiceJPA implements BeerService {
 
         List<Beer> beerList;
 
-        if(StringUtils.hasText(beerName) && beerStyle == null) {
+        if (StringUtils.hasText(beerName) && beerStyle == null) {
             beerList = listBeersByName(beerName);
-        }else if(!StringUtils.hasText(beerName) && beerStyle != null){
+        } else if (!StringUtils.hasText(beerName) && beerStyle != null) {
             beerList = listBeersByStyle(beerStyle);
-        }
-        else {
+        } else {
             beerList = beerRepository.findAll();
         }
 
